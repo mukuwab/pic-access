@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import './App.css';
 import appIcon from './assets/PicAccess_Icon-iOS-Default-1024x1024@1x.png';
 import boltIcon from './assets/bolt.png';
+import PrivacyPolicy from './PrivacyPolicy';
+import Support from './Support';
+import Terms from './Terms';
 
 const Icon = {
   Apple: () => (
@@ -91,27 +95,72 @@ const useCases = [
   'Gym & transit passes',
 ];
 
-function App() {
-  return (
-    <div className="page">
-      <nav className="nav">
-        <div className="nav-inner">
-          <a href="#top" className="brand">
-            <img src={appIcon} alt="" className="brand-icon" />
-            <span>PicAccess</span>
-          </a>
-          <div className="nav-links">
-            <a href="#how">How it works</a>
-            <a href="#features">Features</a>
-            <a href="#privacy">Privacy</a>
-            <a href="#pricing">Pricing</a>
-          </div>
-          <a href="#download" className="btn btn-primary btn-sm">
-            Get the app
-          </a>
-        </div>
-      </nav>
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname]);
+  return null;
+}
 
+function Nav() {
+  return (
+    <nav className="nav">
+      <div className="nav-inner">
+        <Link to="/" className="brand">
+          <img src={appIcon} alt="" className="brand-icon" />
+          <span>PicAccess</span>
+        </Link>
+        <div className="nav-links">
+          <a href="/#how">How it works</a>
+          <a href="/#features">Features</a>
+          <a href="/#privacy">Privacy</a>
+          <a href="/#pricing">Pricing</a>
+        </div>
+        <a href="/#download" className="btn btn-primary btn-sm">
+          Get the app
+        </a>
+      </div>
+    </nav>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="footer">
+      <div className="container">
+        <div className="footer-top">
+          <div className="footer-brand">
+            <img src={appIcon} alt="" />
+            <div>
+              <div className="footer-name">PicAccess</div>
+              <div className="footer-tag">The photos that matter, one swipe away.</div>
+            </div>
+          </div>
+          <nav className="footer-links" aria-label="Footer">
+            <a href="/#features">Features</a>
+            <a href="/#pricing">Pricing</a>
+            <Link to="/support">Support</Link>
+            <a href="/#download">Download</a>
+          </nav>
+        </div>
+        <div className="footer-bottom">
+          <span className="footer-copy">© 2026 Mukuwa Baffoe</span>
+          <div className="footer-legal-links">
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/terms">Terms</Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+function Home() {
+  return (
+    <>
       <header id="top" className="hero">
         <div className="hero-glow" aria-hidden="true" />
         <div className="hero-inner">
@@ -151,69 +200,6 @@ function App() {
               <img src={boltIcon} alt="" className="bolt-img" />
             </div>
           </div>
-
-          {/*
-          // ── Phone mockup (commented out — swap back in by replacing the .hero-device block above) ──
-          <div className="hero-device" aria-hidden="true">
-            <div className="phone">
-              <div className="phone-frame">
-                <div className="phone-notch" />
-                <div className="phone-screen">
-                  <div className="screen-status">
-                    <span>9:41</span>
-                    <span className="status-icons">
-                      <span className="bar b1" />
-                      <span className="bar b2" />
-                      <span className="bar b3" />
-                      <span className="bar b4" />
-                    </span>
-                  </div>
-                  <div className="screen-title">My Photos</div>
-
-                  <div className="card-stack">
-                    <div className="id-card card-back-2">
-                      <div className="id-tag">Loyalty</div>
-                    </div>
-                    <div className="id-card card-back-1">
-                      <div className="id-tag">Insurance</div>
-                    </div>
-                    <div className="id-card card-front">
-                      <div className="id-top">
-                        <div className="id-photo" />
-                        <div className="id-lines">
-                          <div className="id-line w-70" />
-                          <div className="id-line w-50" />
-                          <div className="id-line w-60" />
-                        </div>
-                      </div>
-                      <div className="id-barcode">
-                        {Array.from({ length: 28 }).map((_, i) => (
-                          <span key={i} style={{ height: 18 + ((i * 7) % 14) }} />
-                        ))}
-                      </div>
-                      <div className="id-tag id-tag-active">Driver’s License</div>
-                    </div>
-                  </div>
-
-                  <div className="screen-dots">
-                    <span className="dot active" />
-                    <span className="dot" />
-                    <span className="dot" />
-                    <span className="dot" />
-                    <span className="dot" />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="floating-chip chip-1">
-              <Icon.Sun /> <span>Brightness maxed</span>
-            </div>
-            <div className="floating-chip chip-2">
-              <Icon.Lock /> <span>Face ID locked</span>
-            </div>
-          </div>
-          */}
         </div>
       </header>
 
@@ -368,35 +354,27 @@ function App() {
             <Icon.Apple />
             <span>Download on the App&nbsp;Store</span>
           </a>
-          <div className="cta-foot">Requires iOS 16 or later · iPhone & iPad</div>
         </div>
       </section>
+    </>
+  );
+}
 
-      <footer className="footer">
-        <div className="container footer-inner">
-          <div className="footer-brand">
-            <img src={appIcon} alt="" />
-            <div>
-              <div className="footer-name">PicAccess</div>
-              <div className="footer-tag">The photos that matter, one swipe away.</div>
-            </div>
-          </div>
-          <div className="footer-links">
-            <a href="#features">Features</a>
-            <a href="#privacy">Privacy</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#download">Download</a>
-          </div>
-          <div className="footer-legal">
-            <span>© 2026 Mukuwa Baffoe</span>
-            <span>·</span>
-            <a href="/privacy">Privacy Policy</a>
-            <span>·</span>
-            <a href="/terms">Terms</a>
-          </div>
-        </div>
-      </footer>
-    </div>
+function App() {
+  return (
+    <BrowserRouter>
+      <ScrollToTop />
+      <div className="page">
+        <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
+          <Route path="/support" element={<Support />} />
+          <Route path="/terms" element={<Terms />} />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 
