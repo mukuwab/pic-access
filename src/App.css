@@ -679,7 +679,7 @@ p {
 /* ───────── How it works ───────── */
 .how {
   padding: 110px 0;
-  background: var(--bg-soft);
+  background: radial-gradient(100% 100% at 0% 100%, #1e3a8e 0%, #0a1428 70%);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
@@ -691,17 +691,21 @@ p {
 }
 
 .step {
-  background: #fff;
-  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: var(--radius);
   padding: 32px 28px;
   position: relative;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
 .step:hover {
   transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
 .step-num {
@@ -716,7 +720,7 @@ p {
   font-weight: 700;
   font-size: 0.95rem;
   margin-bottom: 18px;
-  box-shadow: 0 6px 16px rgba(234, 88, 12, 0.3);
+  box-shadow: 0 8px 20px rgba(29, 78, 216, 0.4);
 }
 
 .step h3 {
@@ -727,7 +731,7 @@ p {
 /* ───────── Features ───────── */
 .features {
   padding: 110px 0;
-  background: var(--bg);
+  background: radial-gradient(100% 100% at 100% 0%, #1e3a8e 0%, #0a1428 70%);
 }
 
 .feature-grid {
@@ -739,16 +743,18 @@ p {
 .feature {
   padding: 30px 28px;
   border-radius: var(--radius);
-  border: 1px solid var(--line);
-  background: var(--bg-soft);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
 .feature:hover {
   transform: translateY(-3px);
-  border-color: rgba(234, 88, 12, 0.3);
-  box-shadow: var(--shadow-md);
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
 .feature-icon {
@@ -758,8 +764,8 @@ p {
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: rgba(59, 130, 246, 0.18);
+  color: var(--accent-2);
   margin-bottom: 18px;
 }
 
@@ -885,7 +891,7 @@ p {
 /* ───────── Use cases ───────── */
 .usecases {
   padding: 110px 0;
-  background: var(--bg-soft);
+  background: radial-gradient(100% 100% at 0% 0%, #1e3a8e 0%, #0a1428 70%);
   border-top: 1px solid var(--line);
 }
 
@@ -902,26 +908,29 @@ p {
 }
 
 .chip-cloud li {
-  background: #fff;
-  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
   padding: 12px 20px;
   border-radius: 999px;
   font-weight: 500;
   font-size: 0.98rem;
-  color: var(--fg);
-  transition: transform 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  color: #ffffff;
+  transition: transform 0.15s ease, border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
 }
 
 .chip-cloud li:hover {
   transform: translateY(-2px);
-  border-color: var(--accent);
-  color: var(--accent);
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(59, 130, 246, 0.5);
+  color: var(--accent-2);
 }
 
 /* ───────── Pricing ───────── */
 .pricing {
   padding: 110px 0;
-  background: var(--bg);
+  background: radial-gradient(100% 100% at 100% 100%, #1e3a8e 0%, #0a1428 70%);
   border-top: 1px solid var(--line);
 }
 
@@ -934,25 +943,29 @@ p {
 }
 
 .plan {
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: var(--radius-lg);
   padding: 36px;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
 .plan:hover {
   transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
+  background: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
 .plan-featured {
-  background: linear-gradient(180deg, #fff4e6 0%, #ffffff 60%);
-  border-color: rgba(234, 88, 12, 0.35);
-  box-shadow: 0 30px 60px rgba(234, 88, 12, 0.14);
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.18) 0%, rgba(255, 255, 255, 0.06) 60%);
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 30px 60px rgba(29, 78, 216, 0.22);
 }
 
 .plan-badge {
@@ -967,7 +980,7 @@ p {
   text-transform: uppercase;
   padding: 6px 12px;
   border-radius: 999px;
-  box-shadow: 0 6px 16px rgba(234, 88, 12, 0.3);
+  box-shadow: 0 8px 20px rgba(29, 78, 216, 0.4);
 }
 
 .plan-name {
@@ -1018,48 +1031,28 @@ p {
 
 .plan-list svg {
   flex-shrink: 0;
-  color: var(--accent);
+  color: var(--accent-2);
   margin-top: 2px;
 }
 
 /* ───────── Final CTA ───────── */
 .cta {
   padding: 130px 0;
-  background: #ea580c;
-  color: #ffffff;
+  background:
+    radial-gradient(50% 60% at 50% 50%, rgba(59, 130, 246, 0.28), transparent 70%),
+    radial-gradient(40% 50% at 80% 30%, rgba(251, 191, 36, 0.18), transparent 65%),
+    radial-gradient(120% 100% at 80% 0%, #1e3a8e 0%, #0a1428 60%);
   text-align: center;
   border-top: 1px solid var(--line);
   position: relative;
   overflow: hidden;
 }
 
-.cta h2,
-.cta p {
-  color: #ffffff;
-}
-
-.cta p {
-  color: rgba(255, 255, 255, 0.88);
-}
-
-.cta-foot {
-  color: rgba(255, 255, 255, 0.7) !important;
-}
-
-.cta .btn-primary {
-  background: #ffffff;
-  color: var(--fg);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
-}
-
-.cta .btn-primary:hover {
-  background: #ffffff;
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.24);
-}
-
 .cta-inner {
   max-width: 720px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .cta-icon img {
@@ -1067,7 +1060,7 @@ p {
   height: 96px;
   border-radius: 22px;
   margin: 0 auto 26px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
 }
 
 .cta h2 {
