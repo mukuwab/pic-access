@@ -103,6 +103,10 @@ p {
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+  display: inline-block;
+  padding: 0.05em 0.08em;
+  margin: -0.05em -0.08em;
+  line-height: inherit;
 }
 
 /* ───────── Buttons ───────── */
