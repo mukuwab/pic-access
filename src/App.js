@@ -7,6 +7,8 @@ import PrivacyPolicy from './PrivacyPolicy';
 import Support from './Support';
 import Terms from './Terms';
 
+const APP_STORE_URL = 'https://apps.apple.com/us/app/picaccess/id6761350318';
+
 const Icon = {
   Apple: () => (
     <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20" aria-hidden="true">
@@ -119,7 +121,7 @@ function Nav() {
           <a href="/#privacy">Privacy</a>
           <a href="/#pricing">Pricing</a>
         </div>
-        <a href="/#download" className="btn btn-primary btn-sm">
+        <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-sm">
           Get the app
         </a>
       </div>
@@ -143,7 +145,7 @@ function Footer() {
             <a href="/#features">Features</a>
             <a href="/#pricing">Pricing</a>
             <Link to="/support">Support</Link>
-            <a href="/#download">Download</a>
+            <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer">Download</a>
           </nav>
         </div>
         <div className="footer-bottom">
@@ -179,7 +181,7 @@ function Home() {
               Loyalty card at checkout. PicAccess pulls them up in seconds — no scrolling, no searching.
             </p>
             <div className="hero-ctas">
-              <a href="#download" className="btn btn-primary btn-lg">
+              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
                 <Icon.Apple />
                 <span>Download on the App&nbsp;Store</span>
               </a>
@@ -319,7 +321,7 @@ function Home() {
                 <li><Icon.Check /> Pinch-to-zoom</li>
                 <li><Icon.Check /> Face ID / Touch ID lock</li>
               </ul>
-              <a href="#download" className="btn btn-ghost btn-block">Download free</a>
+              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-block">Download free</a>
             </div>
 
             <div className="plan plan-featured">
@@ -335,7 +337,7 @@ function Home() {
                 <li><Icon.Check /> iCloud sync across devices</li>
                 <li><Icon.Check /> Everything in Free</li>
               </ul>
-              <a href="#download" className="btn btn-primary btn-block">
+              <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-block">
                 <Icon.Apple /> <span>Get PicAccess</span>
               </a>
             </div>
@@ -350,7 +352,7 @@ function Home() {
           </div>
           <h2>The cards in your wallet, in your pocket — but faster.</h2>
           <p>Free on the App Store. Unlock all five slots once, never think about it again.</p>
-          <a href="https://apps.apple.com/" className="btn btn-primary btn-xl">
+          <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-xl">
             <Icon.Apple />
             <span>Download on the App&nbsp;Store</span>
           </a>
